@@ -32,9 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony_2.0.0.10, Version=2.0.0.10, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\lib\0Harmony_2.0.0.10.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="0Harmony, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lib.Harmony.2.0.3\lib\net472\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="SandBox">
       <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\SandBox.dll</HintPath>
@@ -240,6 +239,9 @@
     <Compile Include="UIExtender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\ViewModelComponent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

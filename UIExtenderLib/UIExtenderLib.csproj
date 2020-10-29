@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\..\Program Files %28x86%29\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -36,50 +36,192 @@
       <HintPath>..\lib\0Harmony_2.0.0.10.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="SandBox.GauntletUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>F:\SteamFastLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\SandBox\bin\Win64_Shipping_Client\SandBox.GauntletUI.dll</HintPath>
+    <Reference Include="SandBox">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\SandBox.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="SandBox.View, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>F:\SteamFastLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\SandBox\bin\Win64_Shipping_Client\SandBox.View.dll</HintPath>
+    <Reference Include="SandBox.GauntletUI">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\SandBox.GauntletUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SandBox.View">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\SandBox.View.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SandBox.ViewModelCollection">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\SandBox.ViewModelCollection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="StoryMode">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\StoryMode.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="StoryMode.GauntletUI">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\StoryMode.GauntletUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="StoryMode.View">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\StoryMode.View.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="StoryMode.ViewModelCollection">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\StoryMode.ViewModelCollection.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
-    <Reference Include="System.Xml" />
-    <Reference Include="TaleWorlds.CampaignSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>F:\SteamFastLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.CampaignSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="TaleWorlds.CampaignSystem.ViewModelCollection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>F:\SteamFastLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.CampaignSystem.ViewModelCollection.dll</HintPath>
-    </Reference>
-    <Reference Include="TaleWorlds.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>F:\SteamFastLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="TaleWorlds.Engine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>F:\SteamFastLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.Engine.dll</HintPath>
-    </Reference>
-    <Reference Include="TaleWorlds.Engine.GauntletUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>F:\SteamFastLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.Engine.GauntletUI.dll</HintPath>
-    </Reference>
-    <Reference Include="TaleWorlds.GauntletUI.PrefabSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>F:\SteamFastLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.GauntletUI.PrefabSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="TaleWorlds.Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>F:\SteamFastLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.Library.dll</HintPath>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\System.Numerics.Vectors.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="TaleWorlds.MountAndBlade, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>F:\SteamFastLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.dll</HintPath>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TaleWorlds.BattlEye.Client">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.BattlEye.Client.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="TaleWorlds.MountAndBlade.GauntletUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>F:\SteamFastLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\Native\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.GauntletUI.dll</HintPath>
+    <Reference Include="TaleWorlds.CampaignSystem">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.CampaignSystem.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="TaleWorlds.MountAndBlade.View, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>F:\SteamFastLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\Native\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.View.dll</HintPath>
+    <Reference Include="TaleWorlds.CampaignSystem.ViewModelCollection">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.CampaignSystem.ViewModelCollection.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="TaleWorlds.MountAndBlade.ViewModelCollection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>F:\SteamFastLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.ViewModelCollection.dll</HintPath>
+    <Reference Include="TaleWorlds.Core">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Core.ViewModelCollection">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.Core.ViewModelCollection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.DotNet">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.DotNet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.DotNet.AutoGenerated">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.DotNet.AutoGenerated.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Engine">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.Engine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Engine.AutoGenerated">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.Engine.AutoGenerated.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Engine.GauntletUI">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.Engine.GauntletUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.GauntletUI">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.GauntletUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.GauntletUI.Data">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.GauntletUI.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.GauntletUI.ExtraWidgets">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.GauntletUI.ExtraWidgets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.GauntletUI.PrefabSystem">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.GauntletUI.PrefabSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.GauntletUI.TooltipExtensions">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.GauntletUI.TooltipExtensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.InputSystem">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.InputSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Library">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.Library.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Localization">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.Localization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.MountAndBlade">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.MountAndBlade.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.AutoGenerated">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.MountAndBlade.AutoGenerated.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.CustomBattle">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.MountAndBlade.CustomBattle.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.GauntletUI">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.MountAndBlade.GauntletUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.GauntletUI.Widgets">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.MountAndBlade.GauntletUI.Widgets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.Helpers">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.MountAndBlade.Helpers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.View">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.MountAndBlade.View.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.ViewModelCollection">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.MountAndBlade.ViewModelCollection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.NavigationSystem">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.NavigationSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Network">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.Network.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.ObjectSystem">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.ObjectSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.PlayerServices">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.PlayerServices.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.PSAI">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.PSAI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.SaveSystem">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.SaveSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Starter.DotNetCore">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.Starter.DotNetCore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Starter.Library">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.Starter.Library.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.TwoDimension">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.TwoDimension.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.TwoDimension.Standalone">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\KingdomsOfArda-Source\Libraries\TaleWorlds.TwoDimension.Standalone.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>

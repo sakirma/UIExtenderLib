@@ -1,14 +1,15 @@
-﻿using System;
+﻿using SandBox.GauntletUI;
+using SandBox.GauntletUI.Map;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
-using SandBox.GauntletUI;
-using SandBox.GauntletUI.Map;
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.ViewModelCollection;
 using TaleWorlds.CampaignSystem.ViewModelCollection.CharacterDeveloper;
 using TaleWorlds.CampaignSystem.ViewModelCollection.Map;
 using TaleWorlds.Core;
+using TaleWorlds.MountAndBlade.CustomBattle;
 using TaleWorlds.MountAndBlade.GauntletUI;
 using TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer;
 
@@ -22,13 +23,13 @@ namespace UIExtenderLib.CodePatcher.BuiltInPatches
     /// </summary>
     internal class ViewModelPatches
     {
-        internal enum Result: int
+        internal enum Result : int
         {
             Success = 1,
             Failure = 2,
             Partial = 3,
         }
-        
+
         internal static Result AddTo(CodePatcherComponent comp)
         {
             int value = 0;
@@ -38,10 +39,12 @@ namespace UIExtenderLib.CodePatcher.BuiltInPatches
             value |= (int)MissionAgentStatusVMPatch(comp);
             value |= (int)MapVMPatch(comp);
             value |= (int)CharacterVMPatch(comp);
+            value |= (int)CustomBattleVMPatch(comp);
+            value |= (int)CustomBattleMenuSideVMPatch(comp);
 
             if (Enum.IsDefined(typeof(Result), value))
             {
-                return (Result) value;
+                return (Result)value;
             }
             else
             {
@@ -56,7 +59,7 @@ namespace UIExtenderLib.CodePatcher.BuiltInPatches
             {
                 typeof(INavigationHandler), typeof(IMapStateHandler), typeof(MapBarShortcuts), typeof(Action)
             });
-            
+
             if (callsite == null)
             {
                 return Result.Failure;
@@ -73,7 +76,7 @@ namespace UIExtenderLib.CodePatcher.BuiltInPatches
             {
                 return Result.Failure;
             }
-                
+
             comp.AddViewModelInstantiationPatch(callsite);
             foreach (var method in dependentRefreshMethods)
             {
@@ -82,7 +85,7 @@ namespace UIExtenderLib.CodePatcher.BuiltInPatches
 
             return Result.Success;
         }
-        
+
         private static Result PartyVMPatch(CodePatcherComponent comp)
         {
             Type type = typeof(GauntletPartyScreen);
@@ -103,6 +106,36 @@ namespace UIExtenderLib.CodePatcher.BuiltInPatches
             return Result.Success;
         }
 
+        private static Result CustomBattleVMPatch(CodePatcherComponent comp)
+        {
+            var callsite = typeof(CustomBattleScreen).GetMethod("OnInitialize", BindingFlags.NonPublic | BindingFlags.Instance);
+
+            if (callsite == null) return Result.Failure;
+
+            var refresh = typeof(CustomBattleMenuVM).GetMethod(nameof(CustomBattleMenuVM.RefreshValues));
+
+            if (refresh == null) return Result.Failure;
+
+            comp.AddViewModelInstantiationPatch(callsite);
+            comp.AddViewModelRefreshPatch(refresh);
+            return Result.Success;
+        }
+
+        private static Result CustomBattleMenuSideVMPatch(CodePatcherComponent comp)
+        {
+            var callsite = typeof(CustomBattleMenuVM).GetConstructor(new[] { typeof(CustomBattleState) });
+
+            if (callsite == null) return Result.Failure;
+
+            var refresh = typeof(CustomBattleMenuSideVM).GetMethod(nameof(CustomBattleMenuSideVM.RefreshValues));
+
+            if (refresh == null) return Result.Failure;
+
+            comp.AddViewModelInstantiationPatch(callsite);
+            comp.AddViewModelRefreshPatch(refresh);
+            return Result.Success;
+        }
+
         private static Result MissionAgentStatusVMPatch(CodePatcherComponent comp)
         {
             var callsite = typeof(MissionGauntletAgentStatus).GetMethod(nameof(MissionGauntletAgentStatus.EarlyStart));
@@ -116,7 +149,7 @@ namespace UIExtenderLib.CodePatcher.BuiltInPatches
             {
                 return Result.Failure;
             }
-            
+
             comp.AddViewModelInstantiationPatch(callsite);
             comp.AddViewModelRefreshPatch(refresh);
             return Result.Success;
@@ -143,7 +176,7 @@ namespace UIExtenderLib.CodePatcher.BuiltInPatches
 
         private static Result CharacterVMPatch(CodePatcherComponent comp)
         {
-            var callsite = typeof(CharacterDeveloperVM).GetConstructor(new Type[] {typeof(Action)});
+            var callsite = typeof(CharacterDeveloperVM).GetConstructor(new Type[] { typeof(Action) });
             if (callsite == null)
             {
                 return Result.Failure;

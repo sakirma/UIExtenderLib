@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Reflection;
 using System.Xml;
 using TaleWorlds.Core;
@@ -20,7 +19,7 @@ namespace UIExtenderLib.Prefab
     public class PrefabComponent
     {
         private readonly string _moduleName;
-        
+
         /// <summary>
         /// Registered movie patches
         /// </summary>
@@ -119,12 +118,12 @@ namespace UIExtenderLib.Prefab
                     case PrefabExtensionInsertAsSiblingPatch.InsertType.Append:
                         node.ParentNode.InsertAfter(importedExtensionNode, node);
                         break;
-                        
+
                     case PrefabExtensionInsertAsSiblingPatch.InsertType.Prepend:
                         node.ParentNode.InsertBefore(importedExtensionNode, node);
                         break;
                 }
-            });           
+            });
         }
 
         /**
@@ -139,7 +138,7 @@ namespace UIExtenderLib.Prefab
         {
             var path = Path.Combine(Utilities.GetBasePath(), "Modules", _moduleName, "GUI", "PrefabExtensions", name + ".xml");
             var doc = new XmlDocument();
-                
+
             using (var reader = XmlReader.Create(path, new XmlReaderSettings
             {
                 IgnoreComments = true,
@@ -148,7 +147,7 @@ namespace UIExtenderLib.Prefab
             {
                 doc.Load(reader);
             }
-                
+
             Debug.Assert(doc.HasChildNodes, $"Failed to parse extension ({name}) XML!");
             return doc.DocumentElement;
         }
@@ -162,18 +161,26 @@ namespace UIExtenderLib.Prefab
         internal void ForceReloadMovies()
         {
             // @TODO: figure out a method more prone to game updates
-            
+
             // get internal dict of loaded Widgets
-            var dict =  UIResourceManager.WidgetFactory.PrivateValue<NonGenericCollections.IDictionary>("_customTypes");
-            Utils.CompatAssert(dict != null, "WidgetFactory._customTypes == null");
-            
+            var customTypes = UIResourceManager.WidgetFactory.PrivateValue<NonGenericCollections.IDictionary>("_liveCustomTypes");
+
+            // get internal dic of loaded custome type paths
+            var customTypePaths = UIResourceManager.WidgetFactory.PrivateValue<NonGenericCollections.IDictionary>("_customTypePaths");
+
+            // validate that the dictionaries are created properly
+            Utils.CompatAssert(customTypes != null, "WidgetFactory._liveCustomTypes == null");
+            Utils.CompatAssert(customTypePaths != null, "WidgetFactory._customTypePaths == null");
+
             foreach (var movie in _moviePatches.Keys)
             {
-                Debug.Assert(dict.Contains(movie), $"Movie {movie} to be patched was not found in the WidgetFactory!");
-                
+                // Make sure the path for the widget exists
+                Debug.Assert(customTypePaths.Contains(movie), $"The path for the Movie ({movie}) to be patched was not found!");
+
                 // remove widget from previously loaded Widgets
-                dict.Remove(movie);
-                
+                customTypePaths.Remove(movie);
+                customTypes.Remove(movie);
+
                 // re-add it, forcing Factory to call now-patched `LoadFrom` method
                 UIResourceManager.WidgetFactory.AddCustomType(movie, PathForMovie(movie));
             }
@@ -189,11 +196,11 @@ namespace UIExtenderLib.Prefab
             // @TODO: figure out a method more prone to game updates
             var prefabNamesMethod = typeof(WidgetFactory).GetMethod("GetPrefabNamesAndPathsFromCurrentPath", BindingFlags.Instance | BindingFlags.NonPublic);
             Utils.CompatAssert(prefabNamesMethod != null, "WidgetFactory.GetPrefabNamesAndPathsFromCurrentPath");
-            
+
             // get names and paths of loaded Widgets
             var paths = prefabNamesMethod.Invoke(UIResourceManager.WidgetFactory, new object[] { }) as Dictionary<string, string>;
             Utils.CompatAssert(paths != null, "WidgetFactory.GetPrefabNamesAndPathsFromCurrentPath == null");
-            
+
             return paths[movie];
         }
 
